@@ -93,16 +93,16 @@ public class Colosseum {
 
         while (setAttackLevel > MAX_HIT_POINTS - 1 || setAttackLevel < 1) {
             System.out.println("Sorry. Attack level must be between 1 and 49");
-            setHitPoints = myScan.nextInt();
+            setAttackLevel = myScan.nextInt();
         }
 
-        System.out.println("Enter your defense level (1-3): ");
+        System.out.println("Enter your defense level (1-23): ");
         int setDefenseLevel = myScan.nextInt();
 
         while ((setDefenseLevel < 1 || setDefenseLevel > MAX_DEFENSE_LEVEL)
-                && setDefenseLevel + setAttackLevel != MAX_HIT_POINTS) {
-            System.out.println("Sorry. Attack level must be between 1 and 49");
-            setHitPoints = myScan.nextInt();
+                || setDefenseLevel + setAttackLevel != MAX_HIT_POINTS) {
+            System.out.println("Sorry. Defense level must be in between 1 and 23.");
+            setDefenseLevel = myScan.nextInt();
         }
 
         Pokemon tempPokemon = new Pokemon();
